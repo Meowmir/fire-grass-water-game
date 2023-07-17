@@ -7,3 +7,15 @@ const result_div = document.querySelector(".result")
 const fire_div = document.getElementById("f")
 const grass_div = document.getElementById("g")
 const water_div = document.getElementById("w")
+
+fire_div.addEventListener('click', function (){
+    console.log("You clicked FIRE!")
+})
+
+grass_div.addEventListener('click', function (){
+    console.log("You clicked GRASS!")
+})
+
+water_div.addEventListener('click', function (){
+    console.log("You clicked WATER!")
+})
