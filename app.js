@@ -21,23 +21,38 @@ function convertToWord(letter){
 }
 
 function win(user, computer){
+    const userChoice_div = document.getElementById(user)
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_div.innerHTML = `${convertToWord(user)} beats ${convertToWord(computer)}. You win!`
+    userChoice_div.classList.add("green-glow")
+    setTimeout(() =>
+        userChoice_div.classList.remove("green-glow")
+    , 300);
 }
 
 function lose(user, computer){
+    const userChoice_div = document.getElementById(user)
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_div.innerHTML = `${convertToWord(computer)} beats ${convertToWord(user)}. You lose.`
+    userChoice_div.classList.add("red-glow")
+    setTimeout(() =>
+        userChoice_div.classList.remove("red-glow")
+    , 300);
 }
 
-function draw(){
+function draw(user, computer){
+    const userChoice_div = document.getElementById(user)
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_div.innerHTML = `It's a draw.`
+    userChoice_div.classList.add("grey-glow")
+    setTimeout(() =>
+        userChoice_div.classList.remove("grey-glow")
+    , 300);
 }
 
 function game(userChoice){
@@ -62,17 +77,11 @@ function game(userChoice){
 }
 
 function main() {
-    fire_div.addEventListener('click', function (){
-        game("f")
-    })
+    fire_div.addEventListener('click', () => game("f"))
 
-    grass_div.addEventListener('click', function (){
-        game("g")
-    })
+    grass_div.addEventListener('click',  () => game("g"))
 
-    water_div.addEventListener('click', function (){
-        game("w")
-    })
+    water_div.addEventListener('click', () => game("w"))
 }
 
 main()
