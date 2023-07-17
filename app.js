@@ -8,14 +8,45 @@ const fire_div = document.getElementById("f")
 const grass_div = document.getElementById("g")
 const water_div = document.getElementById("w")
 
-fire_div.addEventListener('click', function (){
-    console.log("You clicked FIRE!")
-})
+function getComputerChoice(){
+    const choices = ["f", "g", "w"];
+    const randomNumber = Math.floor(Math.random() * 3)
+    return choices[randomNumber]
+}
 
-grass_div.addEventListener('click', function (){
-    console.log("You clicked GRASS!")
-})
+function game(userChoice){
+    const computerChoice = getComputerChoice();
+    switch (userChoice + computerChoice)  {
+        case "fg":
+        case "gw":
+        case "wf":
+            console.log("USER WINS!");
+            break;
+        case "fw":
+        case "gf":
+        case "wg":
+            console.log("USER LOSES.");
+            break;
+        case "ff":
+        case "gg":
+        case "ww":
+            console.log("It's a draw.");
+            break;
+    }
+}
 
-water_div.addEventListener('click', function (){
-    console.log("You clicked WATER!")
-})
+function main() {
+    fire_div.addEventListener('click', function (){
+        game("f")
+    })
+
+    grass_div.addEventListener('click', function (){
+        game("g")
+    })
+
+    water_div.addEventListener('click', function (){
+        game("w")
+    })
+}
+
+main()
