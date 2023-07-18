@@ -38,20 +38,20 @@ header > h1 {
     background: #E2584D;
     color: white;
     font-size: 14px;
-    padding: 2px 18px;
+    padding: 2px 13px;
     font-family: Asap, sans-serif;
 }
 
 #user-label {
     position: absolute;
     top: 30px;
-    left: -25px;
+    left: -26px;
 }
 
 #computer-label {
     position: absolute;
     top: 30px;
-    right: -30px;
+    right: -33px;
 }
 
 .result {
